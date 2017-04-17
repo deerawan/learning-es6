@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>var</title>
+</head>
+<body>
+<script>
+  function setWidth() {
+    var width = 100; // var support function scope
+    console.log(width);
+  }
+  setWidth();
+  // NOTE: try to type "width" in browser console, it won't be recognized
+  // because var supports function scope so outside the function,
+  // it won't be identified
+
+  var number = 100;
+  if (number > 10) {
+      var multiply = number * 2; // var doesn't support block scope
+      console.log(multiply);
+  }
+
+  // NOTE: try to type "multiply" in browser console
+  // because var doesn't support block scoping,
+  // so outside the block scope, it will be recognized
+</script>
+</body>
+</html>
