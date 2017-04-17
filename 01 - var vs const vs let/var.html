@@ -6,24 +6,40 @@
 </head>
 <body>
 <script>
+  // (1) Var support function scope
+  // function scope begins with { and end with }
   function setWidth() {
     var width = 100; // var support function scope
-    console.log(width);
+    console.log('width', width);
   }
   setWidth();
   // NOTE: try to type "width" in browser console, it won't be recognized
   // because var supports function scope so outside the function,
   // it won't be identified
 
+  // (2) Var doesn't support block scope
   var number = 100;
+  // block scope begins with { and end with }
   if (number > 10) {
       var multiply = number * 2; // var doesn't support block scope
-      console.log(multiply);
+      console.log('multiply', multiply);
   }
-
   // NOTE: try to type "multiply" in browser console
   // because var doesn't support block scoping,
   // so outside the block scope, it will be recognized
+
+  // (3) var can redeclare variable with same name
+  var money = 100;
+  if (true) {
+      var money = 300;
+  }
+  // var can replace value of previous variable with same name
+  console.log('money', money); // 300, not 100
+
+  var name = "budi";
+  var age = 17;
+  var name = "dimas"; // it is valid statement even though we have declared "name" above
+  console.log('name', name); // dimas
 </script>
 </body>
 </html>
