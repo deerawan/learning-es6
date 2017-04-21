@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>let</title>
+</head>
+<body>
+<script>
+    /*
+        1) let support block scope (if, for, switch)
+    */
+    let number = 100;
+
+    if (true) {
+        let number = 300;
+        console.log(number); // 300
+    }
+
+    console.log(number); // 100
+
+    /*
+        2) double declaration will throw an error
+        different with var which doesn't show any error
+    */
+    let message = 'hello';
+    // let message = 'world'; => will throw an error identifier has been declared
+
+    /*
+        3) let can be re-assigned
+    */
+    let name = 'budi'
+    name = 'thomas';
+    console.log(name); // thomas
+</script>
+</body>
+</html>

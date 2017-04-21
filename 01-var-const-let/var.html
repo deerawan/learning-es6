@@ -29,17 +29,25 @@
   // so outside the block scope, it will be recognized
 
   // (3) var can redeclare variable with same name
+  var name = "budi";
+  var age = 17;
+  var name = "dimas"; // it is valid statement even though we have declared "name" above
+  console.log('name', name); // dimas
+
   var money = 100;
   if (true) {
       var money = 300;
   }
   // var can replace value of previous variable with same name
+  // it is because var doesn't support function scope, money will be re-assigned
   console.log('money', money); // 300, not 100
 
-  var name = "budi";
-  var age = 17;
-  var name = "dimas"; // it is valid statement even though we have declared "name" above
-  console.log('name', name); // dimas
+  var airplane = "garuda";
+  function showMyFlight() {
+      var airplane = "singapore airlines";
+  }
+  console.log('airplane', airplane); // garuda
+  // it is because var support function scope, it won't re-assign airplane
 </script>
 </body>
 </html>
