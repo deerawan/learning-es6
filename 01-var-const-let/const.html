@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>const</title>
+</head>
+<body>
+<script>
+    /*
+        1) const means that the variable can't be re-assigned
+    */
+    const number = 10;
+    //number = 5; // => will throw type error
+
+
+    /*
+        2) const support block scoping like let
+    */
+    const name = 'dimas';
+
+    if (true) {
+        const name = 'wahyu';
+        console.log(name); // wahyu
+    }
+
+    console.log(name); // dimas
+
+    /*
+        3) const doesn't mean that the value is constant because for object, the value can change
+    */
+    const person = {
+        name: 'budi',
+        age: 20
+    };
+
+    person.age = 21; // valid
+
+    console.log(person);
+
+    // const person = { name: 'lisa' }; // => will throw an error
+</script>
+</body>
+</html>
