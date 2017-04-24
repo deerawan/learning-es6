@@ -48,6 +48,15 @@
   }
   console.log('airplane', airplane); // garuda
   // it is because var support function scope, it won't re-assign airplane
+
+  /**
+   * (4) var in looping cause trouble
+   */
+   for (var i = 0; i < 5; i++) {
+     setTimeout(() => {
+       console.log(i); // will always print as 5 because using var, variable i is same in this block scope
+     }, 1000);
+   }
 </script>
 </body>
 </html>

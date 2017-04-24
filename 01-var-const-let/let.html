@@ -31,6 +31,15 @@
     let name = 'budi'
     name = 'thomas';
     console.log(name); // thomas
+
+  /*
+     (4) let is the life safer for looping than var
+   */
+   for (let i = 0; i < 5; i++) {
+     setTimeout(() => {
+       console.log(i); // will print 0 - 4
+     }, 1000);
+   }
 </script>
 </body>
 </html>
