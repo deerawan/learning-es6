@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow Function</title>
+</head>
+<body>
+<script>
+  const names = ['budi', 'toni', 'doni'];
+
+  // fat function
+  const coolNames = names.map(function(name) {
+    return `cool ${name}`;
+  });
+
+  // arrow function style 1, remove "function"
+  const coolNames2 = names.map((name) => {
+    return `cool ${name}`;
+  });
+
+  // arrow function style 3, remove parentheses in name
+  const coolNames3 = names.map(name => {
+    return `cool ${name}`;
+  });
+
+  // arrow function style 4, one line, this is implicit return (no return keyword used)
+  const coolNames4 = names.map(name => `cool ${name}`);
+
+  // arrow function style 5, set anonymous function into variable, could be good for error stack trace
+  const addCoolWord = (name) => `cool ${name}`;
+  const coolNames5 = names.map(addCoolWord);
+
+  // arrow function implicit return for object, must use parentheses to encapsulate the object
+  const ages = [20, 30, 17];
+  const students = names.map((name, i) => ({ name, age: ages[i] }));
+
+  console.log(students);
+</script>
+</body>
+</html>
