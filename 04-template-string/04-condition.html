@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Template String</title>
+</head>
+<body>
+<script>
+    const students = [
+        { name: 'budi', age: 28, address: 'malaysia' },
+        { name: 'joni', age: 25 },
+        { name: 'lisa', age: 18 },
+    ]
+
+    // we're going to use ternary condition
+    const msg = `
+        <h2>Student Names</h2>
+        ${students.map(student => `
+            <div>
+                <p>name: ${student.name}</p>
+                <p>age: ${student.age}</p>
+                ${student.address? `<p>Address: ${student.address}</p>` : ``}
+                <hr />
+            </div>
+        `).join('')}
+    `;
+
+    document.body.innerHTML = msg;
+
+    console.log(msg);
+</script>
+</body>
+</html>

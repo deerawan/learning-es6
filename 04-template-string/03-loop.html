@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Template String</title>
+</head>
+<body>
+<script>
+    const students = [
+        { name: 'budi', age: 28 },
+        { name: 'joni', age: 25 },
+        { name: 'lisa', age: 18 },
+    ]
+
+    const msg = `
+        <h2>Student Names</h2>
+        ${students.map(student => `
+            <div>
+                <p>${student.name}</p>
+                <p>${student.age}</p>
+            </div>
+        `).join('')}
+    `;
+
+    document.body.innerHTML = msg;
+
+    console.log(msg);
+</script>
+</body>
+</html>

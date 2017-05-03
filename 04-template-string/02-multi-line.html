@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Template String</title>
+</head>
+<body>
+<script>
+    const name = 'budi';
+    const age = 28;
+    const address = '5/10 Genedict Road, Permason Bay, NSW 2011'
+
+    const msg = `
+        <h2>${name}</h2>
+        <p>I am ${age} years old</p>
+        <p>I live at ${address}</p>
+    `;
+
+    document.body.innerHTML = msg;
+
+    console.log(msg);
+</script>
+</body>
+</html>

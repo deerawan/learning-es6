@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Template String</title>
+</head>
+<body>
+<script>
+    /**
+     * Demonstrate how to call function inside template literal
+     */
+
+    const singer = {
+        name: 'Justin Beiber',
+        nickname: 'Justin',
+        albums: ['album one', 'album two']
+    }
+
+    function renderAlbums(albums) {
+        return `
+            <ul>
+                ${albums.map(album => `<li>${album}</li>`).join('')}
+            </ul>
+        `;
+    }
+
+    // we will call renderAlbums function below
+    const msg = `
+        <h2>${singer.name}</h2>
+        <h3>${singer.nickname}</h3>
+        ${renderAlbums(singer.albums)}
+    `;
+
+    document.body.innerHTML = msg;
+
+    console.log(msg);
+</script>
+</body>
+</html>
