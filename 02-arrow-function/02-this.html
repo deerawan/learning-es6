@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow Function and This</title>
+</head>
+<body>
+    <button name="submit" type="submit" id="submit-btn">Submit</button>
+<script>
+    const button = document.querySelector('#submit-btn');
+    console.log(this); // windows
+    /*
+        NOTE 1:
+        see below that "this" in timeout function refer back to windows
+        instead of button. It is because setTimeout has new function
+        as parameter, so "this" bind to windows
+
+    button.addEventListener('click', function() {
+        console.log(this); // button
+        setTimeout(function() {
+            console.log(this); // windows, what!?
+        }, 1000);
+    });
+
+        NOTE 2:
+        the old method to handle this is to create another variable
+        to store "this". Below we create self and then it is used
+        inside setTimeout
+
+    button.addEventListener('click', function() {
+        let self = this;
+        console.log(this); // button
+        setTimeout(function() {
+            console.log(self); // button
+        }, 1000);
+    });
+    */
+
+    /*
+        SOLUTION:
+        use arrow operator, arrow operator won't bind this,
+        it will use nearby "this" that already exist.
+    */
+    button.addEventListener('click', function() {
+        console.log(this); // button
+        setTimeout(() => { // won't bind this inside the function
+            console.log(this); // button
+        }, 1000);
+    });
+</script>
+</body>
+</html>
