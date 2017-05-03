@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Default Argument</title>
+</head>
+<body>
+<script>
+    function purchase(amount, discount = 10) {
+        return amount - ((amount * discount) / 100);
+    }
+
+    console.log(purchase(100)); // will use discount 10
+    console.log(purchase(100, undefined)); // will use discount 10
+    console.log(purchase(100, 20)); // will use discount 20
+
+</script>
+</body>
+</html>

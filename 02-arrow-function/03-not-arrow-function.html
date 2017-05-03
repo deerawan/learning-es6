@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Not Arrow Function</title>
+</head>
+<body>
+    <button name="submit" type="submit" id="submit-btn">Submit</button>
+    <script>
+        // 1) when we need this
+        const button = document.querySelector('#submit-btn');
+        button.addEventListener('click', () => { // should be "function()"
+            console.log(this); // windows
+        });
+
+        // 2) when we need a method to bind to an object
+        const student = {
+            age: 17,
+            birthday: () => { // should be "function()"
+                this.age++;
+            }
+        }
+
+        // 3) in prototype
+        class Student {
+            constructor(name) {
+                this.name = name;
+            }
+        }
+
+        const budi = new Student('budi');
+        const lisa = new Student('lisa');
+
+        Student.prototype.shout = () => { // should be "function()"
+            console.log(`my name is ${this.name}!!`);
+        }
+
+        // 4) need arguments
+        const displayNumbers = () => { // should be "function()"
+            console.log('numbers are', Array.from(arguments));
+        }
+    </script>
+</body>
+</html>
