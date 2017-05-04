@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Template String</title>
+</head>
+<body>
+<script>
+    function highlight(strings, ...values) {
+        let str = '';
+        strings.forEach((string, i) => {
+            str += `${string} ${values[i]? `<strong>${values[i]}</strong>` : ''}`;
+        });
+
+        return str;
+    }
+
+    const country = 'Australia';
+    const currencyCode = 'AUD';
+    const sentence = highlight`my country ${country} has currency code ${currencyCode} symbol`;
+
+    document.body.innerHTML = sentence;
+
+    console.log(sentence);
+</script>
+</body>
+</html>
