@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Destructuring Array</title>
+</head>
+<body>
+<script>
+    /*
+        basic
+    */
+    const place = ['Australia', 'Sydney', 'NSW'];
+    const [country, capital, region] = place;
+    console.log(country, capital, region);
+
+    /*
+        skip a value
+    */
+    const student = ['budi', 27, 'basketball'];
+    const [name, ,hobby] = student; // here we can ignore age 27
+    console.log(name, hobby);
+
+    /*
+        rest parameters, we can retrieve rest of array values
+    */
+    const smartphones = ['iphone 8', 'galaxy s8', 'lg g5'];
+    const [ios, ...android] = smartphones;
+    console.log(ios); // ['iphone 8']
+    console.log(android); // ['galaxy s8', 'lg g5']
+</script>
+</body>
+</html>

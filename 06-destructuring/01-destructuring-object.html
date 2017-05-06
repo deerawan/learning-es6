@@ -46,6 +46,31 @@
     let {screen: phoneScreen = 'retina display', ram} = smartphone;
     console.log(phoneScreen); // retina display
     console.log(ram); // 2gb
+
+    /*
+        inner object
+    */
+    const person3 = {
+        name: 'budi',
+        socialNetworks: {
+            fb: 'fb.com/budi',
+            twitter: 'twitter.com/budi'
+        }
+    };
+    let {fb, twitter} = person3.socialNetworks;
+    console.log(fb);
+    console.log(twitter);
+
+    /*
+        use it in function
+    */
+    function payBill({total, discount = 0, tax = 10}) {
+        return total + (total * tax / 100) - discount;
+    }
+    const bill1 = payBill({total: 2000}); // it will uses default value
+    const bill2 = payBill({total: 2000, tax: 20});
+    const bill3 = payBill({tax: 20, total: 1000}); // order is not important
+
 </script>
 </body>
 </html>

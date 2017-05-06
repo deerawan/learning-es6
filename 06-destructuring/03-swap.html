@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Destructuring Swap</title>
+</head>
+<body>
+<script>
+    /*
+        we can use destructuring to swap variable value
+    */
+    let oldLaptop = 'microsoft surface';
+    let newLaptop = 'macbook air';
+
+    [newLaptop, oldLaptop] = [oldLaptop, newLaptop];
+    console.log(newLaptop); // microsoft surface
+    console.log(oldLaptop); // macbook air
+</script>
+</body>
+</html>
