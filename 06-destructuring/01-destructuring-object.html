@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Destructuring Object</title>
+</head>
+<body>
+<script>
+    const person = {
+        name: 'budi',
+        address: 'palem 8 street',
+        age: 28,
+        job: 'software engineer'
+    };
+
+    /*
+        Basic
+    */
+    let {name, age} = person;
+    console.log(name); // budi
+    console.log(age); // 28
+
+    /*
+        Assign to another variable name
+    */
+    let {name: personName} = person;
+    console.log(personName); // budi
+
+    /*
+        Using default value
+    */
+    const person2 = {
+        name: 'tony',
+        address: 'street kitchen'
+    }
+    let {address, job = 'unemployed'} = person2;
+    console.log(address); // street kitchen
+    console.log(job); // unemployed
+
+    /*
+        Using default value + var name assignment
+    */
+    const smartphone = {
+        ram: '2gb'
+    };
+    let {screen: phoneScreen = 'retina display', ram} = smartphone;
+    console.log(phoneScreen); // retina display
+    console.log(ram); // 2gb
+</script>
+</body>
+</html>
