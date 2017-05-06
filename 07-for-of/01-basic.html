@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>For Of</title>
+</head>
+<body>
+  <p>handsome</p>
+  <p>awesome</p>
+<script>
+  const brands = ['samsung', 'lg', 'nokia'];
+
+  /*
+    we can use forEach but forEach doesn't support break or continue statement
+  */
+  // brands.forEach(brand => {
+  //   if (brand === 'lg') {
+  //     break;
+  //   }
+  //   console.log(brand);
+  // });
+
+  for (const brand of brands) {
+    if (brand === 'lg') {
+      continue;
+    }
+    console.log(brand);
+  }
+
+  /*
+    get index in for of loop
+  */
+  for (const [i, brand] of brands.entries()) {
+    console.log(i, brand);
+  }
+
+  /*
+    for of loop also works with iterator, collections, map, set, string
+  */
+  function sum() {
+    // arguments type is SymbolIterator not Array
+    let total = 0;
+    for (const number of arguments) {
+      total += number;
+    }
+    console.log(total);
+    return total;
+  }
+  sum(1, 2, 3, 4); // 10
+
+  /*
+    for of loop works with string
+  */
+  const superhero = 'batman';
+  for (const char of superhero) {
+    console.log(char);
+  }
+
+  /*
+    for of loop works with NodeList
+  */
+  const paragraphs = document.querySelectorAll('p');
+  for (const paragraph of paragraphs) {
+    console.log(paragraph.textContent);
+  }
+</script>
+</body>
+</html>

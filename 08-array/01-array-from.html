@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Array From</title>
+</head>
+<body>
+    <p>cool</p>
+    <p>awesome</p>
+<script>
+  /**
+   * Array from purpose is to create array from array-like e.g. NodeList, Object, etc
+   */
+
+  /**
+   * (1) create array from NodeList
+   */
+   // the second argument of Array.from accepts map function
+   const paragraphs = Array.from(document.querySelectorAll('p'), paragraph => {
+       return 'fabulous';
+   });
+   console.log(paragraphs);
+
+   /**
+    * (2) create array from arguments
+    */
+    function sumAll() {
+        const nums = Array.from(arguments);
+        return nums.reduce((prev, curr) => prev + curr, 0);
+    }
+    console.log(sumAll(1, 2, 3, 4, 5, 6, 7));
+</script>
+</body>
+</html>

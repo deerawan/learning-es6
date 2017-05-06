@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Array From</title>
+</head>
+<body>
+<script>
+    /**
+     * Array.find() is used to get the matched first element in the array
+     * based on provided criteria
+     * if not found return "undefined"
+     */
+    const superheroes = [
+        {
+            code: 'SPI',
+            name: 'spiderman'
+        },
+        {
+            code: 'BAT',
+            name: 'batman'
+        },
+        {
+            code: 'IRO',
+            name: 'ironman'
+        }
+    ];
+
+    const batman = superheroes.find(hero => hero.name === 'batmano');
+    console.log(batman);
+
+    const batmanIndex = superheroes.findIndex(hero => hero.name === 'ironman');
+    console.log(batmanIndex);
+</script>
+</body>
+</html>
