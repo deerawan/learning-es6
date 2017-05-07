@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Spread</title>
+</head>
+<body>
+    <p>student 1</p>
+    <p>student 2</p>
+<script>
+    const sportCars = ['ferrari', 'lamborghini', 'porsche'];
+    const familyCars = ['toyota', 'honda', 'tesla'];
+
+    /**
+     * (1) using spread, we can insert another element in middle of
+     * array
+     */
+    const allCars = [...sportCars, 'peugeout', ...familyCars];
+    console.log(allCars);
+
+    /**
+     * (2) copy array
+     */
+    const anotherAllCars = [...allCars];
+    console.log(anotherAllCars);
+
+    /**
+     * (3) loop through string
+     */
+    const hobby = 'basketball';
+    const hobbyArray = [...hobby];
+    console.log(hobbyArray); // ['b', 'a', 's', 'k', 'e', 't', ...]
+
+    const replaceA = [...hobby].map(char => (char === 'a') ? 'b' : char);
+    console.log(replaceA); // ['b', 'b', 's', 'k', 'e', 't', ...]
+
+    /**
+     * (4) spread can be used to target all iterable, convert them to array
+     */
+     const students = [...document.querySelectorAll('p')];
+     console.log(students);
+
+     /**
+      * (5) spread can be used for function
+      */
+      const oldHobby = ['smoking', 'drinking'];
+      const newHobby = ['basketball', 'football'];
+      newHobby.push(...oldHobby);
+      console.log(newHobby);
+
+      function sayHello(firstName, lastName) {
+          console.log(`hi ${firstName}, is ${lastName} your last name?`);
+      }
+      const myName = ['budi', 'irawan'];
+      sayHello(...myName);
+</script>
+</body>
+</html>
