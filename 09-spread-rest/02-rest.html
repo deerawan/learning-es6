@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Spread</title>
+</head>
+<body>
+<script>
+    /**
+     * rest different with spread, rest will combine element into array
+     * they have three dot symbols
+     */
+
+     /* in this example, we have a function that can receive tax and
+     * multi amounts (can be indefinite)
+     */
+    function sumTax(tax, ...amounts) {
+        console.log(amounts);
+        return amounts.reduce((prev, amount) => prev + amount, tax);
+    }
+    console.log(sumTax(10, 20, 30));
+    console.log(sumTax(10, 20, 30, 40, 60, 80));
+</script>
+</body>
+</html>
