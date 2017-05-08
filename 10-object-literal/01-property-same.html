@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Object Literal - Omit Property Name</title>
+</head>
+<body>
+<script>
+    /**
+     * Can omit unnecessary assignment if property name is same
+     * with variable
+     */
+    const name = 'sydney';
+    const population = 100;
+    const weather = 'cold';
+
+    /*
+        we don't need to specify property name twice e.g name: name
+        if we want our property name is same
+     */
+    const city = {
+        name,
+        population,
+        theWeather: weather
+    };
+    console.log(city);
+</script>
+</body>
+</html>

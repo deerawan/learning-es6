@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Object Literal - Shortand Function</title>
+</head>
+<body>
+<script>
+    /**
+     * object key now support computed, it can process variable / js expression
+     */
+    const color = 'color';
+    const value = 'blue';
+
+    const car = {
+        [color]: value,
+        [`${color}Lighter`]: '#ff0000'
+    };
+    console.log(car);
+</script>
+</body>
+</html>
