@@ -20,6 +20,14 @@
     }
     console.log(sumTax(10, 20, 30));
     console.log(sumTax(10, 20, 30, 40, 60, 80));
+
+
+    /*
+    * in second example, we use rest in destructuring
+    */
+    const groceries = ['m&m', 'apple', 'orange', 'mango'];
+    const [candy, ...fruits] = groceries;
+    console.log(candy, fruits);
 </script>
 </body>
 </html>
