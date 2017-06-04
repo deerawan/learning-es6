@@ -14,6 +14,14 @@
     console.log(country, capital, region);
 
     /*
+        default value
+    */
+    const car = ['porsche'];
+    const [brand, color = 'black'] = car;
+    console.log(brand); // porsche
+    console.log(color); // black
+
+    /*
         skip a value
     */
     const student = ['budi', 27, 'basketball'];
