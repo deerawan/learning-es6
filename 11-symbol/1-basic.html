@@ -6,12 +6,18 @@
 </head>
 <body>
 <script>
+    /**
+     * Symbol is a special property
+     */
     var special = Symbol('my special hobby');
     let obj = {
       name: 'budi',
       [special]: 'this is a secret'
     };
     console.log(obj);
+    console.log(Object.keys(obj)); // name
+    console.log(Object.getOwnPropertyNames(obj)); // name
+    console.log(Object.getOwnPropertySymbols(obj)); // Symbol('my special hobby')
 </script>
 </body>
 </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Symbol - Custom Iterator</title>
+</head>
+<body>
+<script>
+    /**
+     * Custom iterator
+     *
+     * print elements based on max
+     */
+    let obj = {
+      [Symbol.iterator]() {
+        var idx = 0;
+        var max = this.max;
+
+        var it = {
+          next: () => {
+            if (idx < max) {
+              var v = this.values[idx];
+              idx++;
+              return { value: v, done: false };
+            } else {
+              return { done: true };
+            }
+          }
+        }
+
+        return it;
+      },
+      values: [0, 2, 4, 6, 8, 10],
+      max: 3
+    };
+
+    console.log([...obj]);
+</script>
+</body>
+</html>
