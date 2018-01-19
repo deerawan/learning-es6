@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Symbol</title>
+</head>
+<body>
+<script>
+    /**
+     * symbol to store private data, can't be looped
+     */
+    const agents = {
+        [Symbol('001')]: { name: 'Diana Lawn', age: 50 },
+        [Symbol('004')]: { name: 'Robert Martin', age: 35 },
+        [Symbol('007')]: { name: 'James Bond', age: 45 },
+    };
+
+    for (agent in agents) {
+        console.log(agent);
+    }
+
+    const agentSymbols = Object.getOwnPropertySymbols(agents);
+    const agentInfo = agentSymbols.map(symbol => agents[symbol]);
+    console.log(agentInfo);
+</script>
+</body>
+</html>
